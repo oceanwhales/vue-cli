@@ -8,5 +8,11 @@ module.exports = {
       ? config.build.productionSourceMap
       : config.dev.cssSourceMap,
     extract: isProduction
-  })
+  }),
+  esModule: true,
+  postcss: [
+    require('autoprefixer')({
+      browsers: ['last 2 versions']
+    })
+  ]
 }
