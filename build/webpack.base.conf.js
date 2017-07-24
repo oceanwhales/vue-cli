@@ -3,6 +3,7 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var projectRoot = path.resolve(__dirname, '../')
+var webpack = require('webpack')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -26,7 +27,13 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components'),
-      '@': resolve('src')
+      '@': resolve('src'),
+      // adding our externals libs
+      'semantic': path.resolve(__dirname, '../node_modules/semantic-ui-css/semantic.min.js')
+      // 'moment': path.resolve(__dirname, '../node_modules/moment/min/moment-with-locales.js'),
+      // 'numeral': path.resolve(__dirname, '../node_modules/numeral/min/numeral.min.js'),
+      // 'gridster': path.resolve(__dirname, '../node_modules/gridster/dist/jquery.gridster.min.js'),
+      // 'stapes': path.resolve(__dirname, '../node_modules/stapes/stapes.min.js')
     }
   },
   module: {
@@ -73,5 +80,15 @@ module.exports = {
         }
       }
     ]
-  }
+  }, 
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      'window.jQuery': 'jquery',
+      semantic: 'semantic-ui-css',
+      Semantic: 'semantic-ui-css',
+      'semantic-ui': 'semantic-ui-css'
+    })
+  ]
 }

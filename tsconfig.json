@@ -8,9 +8,12 @@
       "es2015.promise"
     ],
     "module": "es2015",
+    "isolatedModules": false,
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "removeComments": true,
     "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true,
     "allowJs": true
   },
   "exclude": [
