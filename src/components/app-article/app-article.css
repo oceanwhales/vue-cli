@@ -1,0 +1,13 @@
+.ui.fluid.centered.card {
+    padding: 10px;
+    margin-bottom: 10px
+}
+
+.myarticle:last-child > .ui.fluid.centered.card {
+    margin: 0px;
+}
+
+.ui.card > .image {
+    padding-bottom: 10px;
+    background-color: #ffffff;
+}

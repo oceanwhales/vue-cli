@@ -1,17 +1,17 @@
 <div class="ui middle aligned stackable grid container">
     <div class="row">
-        <div class="fourteen wide column">
-            <div class="ui centered card">
+        <div v-for="article in articles" class="ten wide column centered myarticle">
+            <div class="ui fluid centered card">
                 <div class="image">
-                    <img :src="getImgUrl()">
+                    <img :src="article.image">
                 </div>
-                <div class="content">
-                    <a class="header">Kristy</a>
+                <div class="content">   
+                    <a class="header">{{article.title}}</a>
                     <div class="meta">
-                        <span class="date">Joined in 2013</span>
+                        <span class="date">{{article.date}}</span>
                     </div>
                     <div class="description">
-                        Kristy is an art director living in New York.
+                        {{article.text}}
                     </div>
                 </div>
                 <div class="extra content">

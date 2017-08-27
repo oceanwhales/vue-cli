@@ -15,6 +15,10 @@ export default new Router({
       children: [
         {
           component: AppArticle,
+          path: '',
+        },
+        {
+          component: AppArticle,
           name: 'app-article-view',
           path: 'app-article-view',
         },
